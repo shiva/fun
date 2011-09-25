@@ -1,0 +1,9 @@
+
+Stuff written for fun
+
+The magic that is POSIX
+1. experiments with thread local storage
+   a. thread specific storage
+   b. thread local storage
+
+2. mutexes, semaphores et al. (building better locks)
