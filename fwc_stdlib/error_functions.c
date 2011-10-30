@@ -12,8 +12,8 @@ terminate(Boolean useExit3)
 {
     char *s;
 
-    /* Dump core if EF_DUMPCORE environment variable is defined 
-       and is a nonempty string; otherwise call exit(3) or _exit(2), 
+    /* Dump core if EF_DUMPCORE environment variable is defined
+       and is a nonempty string; otherwise call exit(3) or _exit(2),
        depending on the value of 'useExit3'. */
     s = getenv("EF_DUMPCORE");
     if (s != NULL && *s != '\0')
@@ -23,11 +23,11 @@ terminate(Boolean useExit3)
     else
         _exit(EXIT_FAILURE);
 }
-    
+
 static void
 outputError(Boolean useErr, int err, Boolean flushStdout,
-        const char *format, va_list ap)
-{ 
+            const char *format, va_list ap)
+{
 #define BUF_SIZE 500
     char buf[BUF_SIZE], userMsg[BUF_SIZE], errText[BUF_SIZE];
 
@@ -35,8 +35,8 @@ outputError(Boolean useErr, int err, Boolean flushStdout,
 
     if (useErr) {
         snprintf(errText, BUF_SIZE, " [%s %s]",
-                (err > 0 && err <= MAX_ENAME) ? 
-                ename[err] : "?UNKNOWN?", strerror(err));
+                 (err > 0 && err <= MAX_ENAME) ?
+                 ename[err] : "?UNKNOWN?", strerror(err));
     } else {
         snprintf(errText, BUF_SIZE, ":");
     }
@@ -58,7 +58,7 @@ errMsg(const char *format, ...)
     savedErrno = errno;         /* In case we change it here */
 
     va_start(argList, format);
-    outputError(TRUE, errno, TRUE, format, argList); 
+    outputError(TRUE, errno, TRUE, format, argList);
     va_end(argList);
 
     errno = savedErrno;
@@ -70,14 +70,14 @@ errExit(const char *format, ...)
     va_list argList;
 
     va_start(argList, format);
-    outputError(TRUE, errno, TRUE, format, argList); 
+    outputError(TRUE, errno, TRUE, format, argList);
     va_end(argList);
 
     terminate(TRUE);
 }
 
 void
-err_exit(const char *format, ...) 
+err_exit(const char *format, ...)
 {
     va_list argList;
 
@@ -94,22 +94,22 @@ fatal(const char *format, ...)
     va_list argList;
 
     va_start(argList, format);
-    outputError(FALSE, 0, TRUE, format, argList); 
+    outputError(FALSE, 0, TRUE, format, argList);
     va_end(argList);
 
     terminate(TRUE);
 }
 
 void
-usageErr(const char *format, ...) 
+usageErr(const char *format, ...)
 {
     va_list argList;
 
     fflush(stdout); /* Flush any pending stdout */
 
-    fprintf(stderr, "Usage: "); 
-    va_start(argList, format); 
-    vfprintf(stderr, format, argList); 
+    fprintf(stderr, "Usage: ");
+    va_start(argList, format);
+    vfprintf(stderr, format, argList);
     va_end(argList);
 
     fflush(stderr); /* In case stderr is not line-buffered */
@@ -123,9 +123,9 @@ cmdLineErr(const char *format, ...)
 
     fflush(stdout); /* Flush any pending stdout */
 
-    fprintf(stderr, "Command-line usage error: "); 
+    fprintf(stderr, "Command-line usage error: ");
     va_start(argList, format);
-    vfprintf(stderr, format, argList); 
+    vfprintf(stderr, format, argList);
     va_end(argList);
 
     fflush(stderr); /* In case stderr is not line-buffered */
