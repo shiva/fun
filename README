@@ -1,5 +1,18 @@
 
+Summary of Contents
+===================
+
+./th-stor           - Thread storage 
+./th-stor/src
+./th-stor/build
+./th-stor/include
+./build             - build everything
+./locks             - Examples for thread locking 
+./fwc_stdlib        - standard library (based on Linux Programming Interface stdlib)
+                      provides basic types, error functions, etc 
+
 Stuff written for fun
+=====================
 
 1. experiments with thread local storage
    a. thread specific storage
