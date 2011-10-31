@@ -3,7 +3,7 @@ Summary of Contents
 ===================
 
 ./th-stor           - Thread storage 
-./locks             - Examples for thread locking 
+./locks             - Examples for thread locking (coming soon)
 ./fwc_stdlib        - standard library (based on Linux Programming Interface stdlib)
                       provides basic types, error functions, etc 
 
