@@ -3,19 +3,35 @@ Summary of Contents
 ===================
 
 ./th-stor           - Thread storage 
-./th-stor/src
-./th-stor/build
-./th-stor/include
-./build             - build everything
 ./locks             - Examples for thread locking 
 ./fwc_stdlib        - standard library (based on Linux Programming Interface stdlib)
                       provides basic types, error functions, etc 
 
-Stuff written for fun
-=====================
-
-1. experiments with thread local storage
+Examples 
+========
+1. th-stor   - experiments with thread local storage
    a. thread specific storage
    b. thread local storage
 
-2. mutexes, semaphores et al. (building better locks)
+Compiling the examples 
+======================
+This project uses cmake to generate makefiles, that can then be used to build target 
+for your platform. Out-of-source builds are supported and the instructions below will 
+build everything within the build directory.
+
+On linux machines, you will need the following
+
+    cmake - version 2.6 or greater (you can install this using apt-get)
+    make/gmake - the default should suffice
+    gcc/something other c compiler - the default should suffice
+
+Steps to compile all targets:
+
+    #cd $CHECKOUT/build
+    #cmake ../
+    #make
+
+The above commands generate binaries and libraries in $CHECKOUT/build/bin and 
+$CHECKOUT/build/lib respectively.
+
+
