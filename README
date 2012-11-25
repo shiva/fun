@@ -15,9 +15,7 @@ Examples
 
 Compiling the examples 
 ======================
-This project uses cmake to generate makefiles, that can then be used to build target 
-for your platform. Out-of-source builds are supported and the instructions below will 
-build everything within the build directory.
+This project uses cmake to generate makefiles, that can then be used to build target for your platform. Out-of-source builds are supported and the instructions below will build everything within the build directory.
 
 On linux machines, you will need the following
 
@@ -27,9 +25,9 @@ On linux machines, you will need the following
 
 Steps to compile all targets:
 
-    #cd $CHECKOUT/build
-    #cmake ../
-    #make
+    # cd $CHECKOUT/build
+    # cmake ../
+    # make
 
 The above commands generate binaries and libraries in $CHECKOUT/build/bin and 
 $CHECKOUT/build/lib respectively.
