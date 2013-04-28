@@ -10,8 +10,8 @@ link_directories(
 )
 
 add_executable(
-    cplug             # build cplug binary
-    src/cplug.c           # from these sources
+    cplug               # build cplug binary
+    src/cplug.c         # from these sources
 )
 
 target_link_libraries(
