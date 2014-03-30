@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.6)
-project(funwithc)
+#project(funwithc)
 
 #Sends the -std=c99 flag to the gcc compiler
 add_definitions(-std=c99)

@@ -1,3 +1,5 @@
+project(fwc_base)
+
 set(FWC_SOURCES
     error_functions.c
     get_num.c

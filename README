@@ -6,6 +6,7 @@ Summary of Contents
 ./locks             - Examples for thread locking (coming soon)
 ./fwc_stdlib        - standard library (based on Linux Programming Interface stdlib)
                       provides basic types, error functions, etc 
+./cplug             - A C framework for loading multiple c-libraries as plugins - using a config file (coming soon)
 
 Examples 
 ========
