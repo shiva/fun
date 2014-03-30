@@ -2,6 +2,7 @@
 # build resources #
 ###################
 build/*
+!build
 
 ###############
 # cmake files #
