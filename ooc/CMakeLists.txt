@@ -12,3 +12,4 @@ add_executable(
     src/ooc.c           
 )
 
+add_subdirectory(tests)

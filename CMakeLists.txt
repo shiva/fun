@@ -4,7 +4,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules")
 project(funwithc)
 
 #Sends the -std=c99 flag to the gcc compiler
-add_definitions(-std=c99)
+#add_definitions(-std=c99)
 
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
