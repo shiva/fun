@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "CUnit/Basic.h" 
 #include "Object.h"
 
