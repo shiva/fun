@@ -3,14 +3,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <string.h>
 #include "Object.h"
 #include "Object.r"
 
+const void * classOf(const void* _self);
 
 /*
  *  Object
  */
-
 static void * Object_ctor(void* _self, va_list* app)
 {
     return _self;
@@ -52,6 +53,13 @@ size_t sizeOf(const void* _self)
  *  Class
  */
 
+void * ctor(void* _self, va_list* app);
+void * dtor(void* _self);
+int differ(const void* _self, const void* b);
+int puto(const void* _self, FILE* fp);
+
+
+
 static void * Class_ctor(void* _self, va_list* app)
 {
     struct Class* self   = _self;
@@ -68,10 +76,9 @@ static void * Class_ctor(void* _self, va_list* app)
     {
         typedef void (* voidf) (); /* generic function pointer */
         voidf   selector;
-        va_list ap = *app;
 
-        while ((selector = va_arg(ap, voidf))) {
-            voidf method = va_arg(ap, voidf);
+        while ((selector = va_arg(*app, voidf))) {
+            voidf method = va_arg(*app, voidf);
 
             if (selector == (voidf)ctor)
             {
@@ -99,7 +106,7 @@ static void * Class_dtor(void* _self)
 {
     struct Class* self = _self;
 
-    fprintf(stderr, "%s: cannot destroy class\n", self->name);
+    fprintf(stderr, "%s: cannot delete class\n", self->name);
     return 0;
 }
 
