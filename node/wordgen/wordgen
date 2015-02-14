@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+
+program.count = 3
+program.size = 2
+
+program
+  .version('0.0.1')
+  .option('-n, --word-count <n> [3]', 'Number of words to generate', parseInt)
+  .option('-s, --word-size <n> [2]', 'Size of each word', parseInt)
+  .parse(process.argv);
+
+var WordGenerator = require('wordgenerator')
+var generator  = new WordGenerator()
+
+for (var i = 0; i < program.count; i++) {
+    generator.generate({ 
+        num : program.size, 
+        separator : '-'
+    }, function(err,words) {
+        console.log('%s', words)
+    })
+}
