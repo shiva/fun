@@ -15,4 +15,4 @@ add_subdirectory(th-stor)
 add_subdirectory(cplug)
 add_subdirectory(ooc)
 
-add_subdirectory(nim)
+# add_subdirectory(nim) -- nim support on CI is a pain!!!
