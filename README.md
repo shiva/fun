@@ -1,4 +1,4 @@
-[![Build Status](http://ci.shiv.me/buildStatus/icon?job=fun)](http://ci.shiv.me/job/fun/)
+[![Build Status](https://travis-ci.org/shiva/fun.svg?branch=master)](https://travis-ci.org/shiva/fun)
 
 Summary of Contents
 ===================
