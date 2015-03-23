@@ -7,10 +7,6 @@ include_directories(    # add everything to include path
     include
 )
 
-#link_directories(
-#    $(FUNWITHC_SOURCE_DIR)/fwc_stdlib
-#)
-
 add_executable(
     cplug               # build cplug binary
     src/cplug.c         # from these sources

@@ -1,7 +1,7 @@
-project(funwithc)
-
 #Sends the -std=c99 flag to the gcc compiler
-#add_definitions(-std=c99)
+add_definitions(-std=c99)
+
+enable_testing()
 
 if(APPLE)
     set(CMAKE_MACOSX_RPATH ON)
@@ -17,6 +17,12 @@ endif()
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
+
+enable_language(C)
+enable_language(CXX)
+
+# Enable testing with ctest dashboard
+#include (CTest)
 
 add_subdirectory(fwc_stdlib)
 add_subdirectory(th-stor)

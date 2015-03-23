@@ -7,10 +7,6 @@ include_directories(    # add everything to include path
     th-stor
 )
 
-#link_directories(
-#    $(FUNWITHC_SOURCE_DIR)/fwc_stdlib
-#)
-
 add_executable(
     th-stor             # build th-stor binary
     th-stor.c           # from these sources
