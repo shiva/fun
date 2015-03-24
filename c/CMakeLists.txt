@@ -1,7 +1,8 @@
-#Sends the -std=c99 flag to the gcc compiler
-add_definitions(-std=c99)
+cmake_minimum_required(VERSION 2.8)
+project(FunWithC)
 
-enable_testing()
+#Sends the -std=c99 flag to the gcc compiler
+#add_definitions(-std=c99)
 
 if(APPLE)
     set(CMAKE_MACOSX_RPATH ON)
@@ -15,14 +16,25 @@ if(APPLE)
     endif()
 endif()
 
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
-set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
+# Check for CppUTest and bail out if they don't have it
+if(DEFINED ENV{CPPUTEST_HOME})
+    message("Using CppUTest found in $ENV{CPPUTEST_HOME}")
+else()
+    message("CPPUTEST_HOME is not set; You must tell CMake where to find CppUTest")
+    return()
+endif()
 
 enable_language(C)
 enable_language(CXX)
+enable_testing()
 
-# Enable testing with ctest dashboard
-#include (CTest)
+# The version number
+set (FunWithC_VERSION_MAJOR 1)
+set (FunWithC_VERSION_MINOR 0)
+
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+set (CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
+set (CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 
 add_subdirectory(fwc_stdlib)
 add_subdirectory(th-stor)

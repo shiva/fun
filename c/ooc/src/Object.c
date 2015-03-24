@@ -55,10 +55,8 @@ size_t sizeOf(const void* _self)
 
 void * ctor(void* _self, va_list* app);
 void * dtor(void* _self);
-int differ(const void* _self, const void* b);
-int puto(const void* _self, FILE* fp);
-
-
+//int differ(const void* _self, const void* b);
+//int puto(const void* _self, FILE* fp);
 
 static void * Class_ctor(void* _self, va_list* app)
 {
@@ -137,7 +135,7 @@ const void* Class  = object + 1;
 /*
  *  object management and selectors
  */
-void * new(const void* _class, ...)
+void * create(const void* _class, ...)
 {
     const struct Class* class = _class;
     struct Object*      object;
@@ -155,7 +153,7 @@ void * new(const void* _class, ...)
     return object;
 }
 
-void delete(void* _self)
+void destroy(void* _self)
 {
     if (_self)
     {

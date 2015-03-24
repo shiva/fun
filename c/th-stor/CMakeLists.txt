@@ -1,7 +1,3 @@
-cmake_minimum_required(VERSION 2.6)
-
-project(fwc_thstor)
-
 include_directories(    # add everything to include path
     $(FUNWITHC_SOURCE_DIR)/fwc_stdlib
     th-stor
