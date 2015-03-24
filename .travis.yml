@@ -2,15 +2,11 @@ language: c
 compiler:
 - gcc
 - clang
-before_install:
+install:
 - wget https://github.com/cpputest/cpputest.github.io/blob/master/releases/cpputest-3.6.tar.gz?raw=true -O cpputest-3.6.tar.gz
-- tar zxf cpputest-3.6.tar.gz 
-- cd cpputest-3.6/build
-- autoreconf .. -i
-- ../configure --prefix=/usr/local/
-- make
-- sudo make install
-env: CPPUTEST_HOME=/usr/local/
+- tar -xzvf cpputest-3.6.tar.gz
+- cd cpputest-3.6/build && autoreconf .. -i && ../configure --prefix=/usr/local/ && make && sudo make install
+- export CPPUTEST_HOME=/usr/local/
 script: mkdir build && cd build && cmake ../ && make && make test
 notifications:
   webhooks:
