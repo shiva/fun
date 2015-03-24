@@ -3,6 +3,8 @@
 Summary of Contents
 ===================
 
+[![Join the chat at https://gitter.im/shiva/fun](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/shiva/fun?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
  - th-stor     - Thread local storage 
  - fwc_stdlib  - A standard library (based on Linux Programming Interface stdlib) that provides basic types, error functions, etc 
  - nim         - A set of simple programs using [nim language](http://nim-lang.org/) 
