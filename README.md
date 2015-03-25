@@ -39,3 +39,7 @@ Steps to compile all targets:
     # make
 
 The above commands generate binaries and libraries in $CHECKOUT/build/bin and $CHECKOUT/build/lib respectively.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/shiva/fun/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
