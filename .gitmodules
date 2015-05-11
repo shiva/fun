@@ -1,0 +1,3 @@
+[submodule "node/trello-processor"]
+	path = node/trello-processor
+	url = git@github.com:shiva/trello-processor.git
