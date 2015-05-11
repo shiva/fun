@@ -16,3 +16,9 @@ notifications:
       on_failure: always
   slack:
       secure: IA4WTzrZBxyb1bvgKPq9ZLotP+TC/+t1b3LzL1XXXj+MWa6b+It4kiuuKmbPGFxIaZTdsHcDKWAOXPOsLie2XQKE6la2JvWKyqwqmPLV/1pRe0SI5Iq7/MR8++iyq6169bespg/ZF/8mwMN6Xk1x4H2i0PRA3lIY3U0udh1EXVs=
+addons:
+    code_climate:
+        repo_token: 19c61f1e9c92ca3aa28ac4290ed248100a7966ae7f8ee0139aec55866a3618c6
+after_script:
+    - codeclimate < lcov.info
+
