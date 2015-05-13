@@ -19,6 +19,4 @@ notifications:
 addons:
     code_climate:
         repo_token: 19c61f1e9c92ca3aa28ac4290ed248100a7966ae7f8ee0139aec55866a3618c6
-after_script:
-    - codeclimate < lcov.info
 
