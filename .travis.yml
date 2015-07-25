@@ -3,10 +3,10 @@ language: c
 compiler:
 - gcc
 install:
-- wget https://github.com/cpputest/cpputest.github.io/blob/master/releases/cpputest-3.6.tar.gz?raw=true -O cpputest-3.6.tar.gz
-- tar -xzvf cpputest-3.6.tar.gz
-- pushd cpputest-3.6/build && autoreconf .. -i && ../configure --prefix=/usr/local/ && make && sudo make install
-- export CPPUTEST_HOME=/usr/local/
+- wget https://github.com/cpputest/cpputest.github.io/blob/master/releases/cpputest-3.6.tar.gz?raw=true
+- tar -xzf cpputest-3.6.tar.gz
+- pushd cpputest-3.6/build && autoreconf .. -i && ../configure --prefix=$HOME/cpputest && make && make install
+- export CPPUTEST_HOME=$HOME/cpputest
 - popd
 script: mkdir build && cd build && cmake ../ && make && make test
 notifications:
