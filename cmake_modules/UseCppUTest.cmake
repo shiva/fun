@@ -17,8 +17,6 @@ function(add_unit_test)
     set_property(TARGET imp_cpputest PROPERTY
             IMPORTED_LOCATION $ENV{CPPUTEST_HOME}/lib/libCppUTest.a)
 
-
-    # add target to trigger the nimrod compiler
     add_executable(
         ${ut_target}
         EXCLUDE_FROM_ALL
