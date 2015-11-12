@@ -40,5 +40,5 @@ add_subdirectory(fwc_stdlib)
 add_subdirectory(th-stor)
 add_subdirectory(cplug)
 add_subdirectory(ooc)
+add_subdirectory(ds)
 
-# add_subdirectory(nim) -- nim support on CI is a pain!!!
