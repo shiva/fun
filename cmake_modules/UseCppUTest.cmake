@@ -3,12 +3,6 @@ include(CMakeParseArguments)
 function(add_unit_test)
     cmake_parse_arguments(ARGS "" "TARGET" "SOURCES" ${ARGN})
 
-    # collect set of input source files
-    set(in_files "")
-    foreach(src ${ARGS_SOURCES} ${ARGS_UNPARSED_ARGUMENTS})
-        list(APPEND in_files "${CMAKE_CURRENT_SOURCE_DIR}/${src}")
-    endforeach(src ${ARGS_SOURCES} ${ARGS_UNPARSED_ARGUMENTS})
-
     # set the target binary and nim cache directory
     set(ut_target "test-${ARGS_TARGET}")
     
@@ -20,8 +14,9 @@ function(add_unit_test)
     add_executable(
         ${ut_target}
         EXCLUDE_FROM_ALL
-        ${in_files}
+        ${ARGS_SOURCES}
     )
+    
     target_link_libraries(${ut_target} imp_cpputest) 
     add_custom_target(
         run-${ut_target}

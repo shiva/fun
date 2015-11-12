@@ -5,8 +5,8 @@ include_directories(    # add everything to include path
 )
 
 set(DS_SOURCES
+	src/mem.c
     src/linkedlist.c
-    src/hashmap.c
     )
 
 add_library(ds SHARED ${DS_SOURCES})
@@ -23,5 +23,7 @@ set_target_properties(libds-static PROPERTIES PREFIX "lib")
 add_unit_test(
     TARGET ds
     SOURCES 
-    ./tests/DSTests.cpp 
-    ${DS_SOURCES})
+    	${DS_SOURCES}
+    	tests/BasicTests.cpp
+    	tests/RunAllTests.cpp
+    )
