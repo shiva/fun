@@ -25,5 +25,6 @@ add_unit_test(
     SOURCES 
     	${DS_SOURCES}
     	tests/BasicTests.cpp
+    	tests/LinkedListTests.cpp
     	tests/RunAllTests.cpp
     )

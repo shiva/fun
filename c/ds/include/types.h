@@ -25,5 +25,4 @@
 	#define NULL (void *)0
 #endif
 
-
 #endif /* C_DS_INCLUDE_TYPES_H_ */

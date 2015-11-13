@@ -10,17 +10,24 @@
 #include "types.h"
 
 #ifdef __cplusplus
-extern "C" {  // only need to export C interface if
-              // used by C++ source code
+extern "C" {
 #endif
 
-	typedef void* item_type;
-	typedef bool (*item_type_is_eq_fn)(item_type x, item_type y);
+	typedef struct node_s node_t;
 
-	typedef struct list_node_s list_node;
-	typedef struct list_s list;
+	void push(node_t **head, int val);
+	int  pop(node_t **head);
 
-	list_node* search_list(list *l, item_type x);
+	bool append_last(node_t **head, int val);
+	bool remove_last(node_t *head);
+
+	bool remove_by_index(node_t **head, int idx);
+	bool remove_by_value(node_t **head, int val);
+
+	bool 	node_has_next(node_t *node);
+	node_t* node_get_next(node_t *node);
+	int 	node_get_value(node_t *node);
+
 
 #ifdef __cplusplus
 }
