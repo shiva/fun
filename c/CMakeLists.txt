@@ -41,4 +41,5 @@ add_subdirectory(th-stor)
 add_subdirectory(cplug)
 add_subdirectory(ooc)
 add_subdirectory(ds)
+add_subdirectory(cci)
 
