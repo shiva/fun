@@ -36,11 +36,7 @@ int pop(node_t **head)
 
 node_t* get_tail(node_t *head)
 {
-	node_t* n = NULL;
-
-	if (head) {
-		n = node_get_next(head);
-	}
+	node_t* n = head;
 
 	while(node_has_next(n)) {
 		n = node_get_next(n);
