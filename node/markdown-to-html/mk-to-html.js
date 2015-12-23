@@ -18,7 +18,7 @@ if (!program.input) {
 
 console.log('processing ' + program.input + ' ...');
 
-markdownTxt = toMarkdown(fs.readFileSync(program.input, 'utf8'));
+var markdownTxt = toMarkdown(fs.readFileSync(program.input, 'utf8'));
 var ifile = path.normalize(program.input);
 
 /* calculate output file name : filename.md */
@@ -28,13 +28,15 @@ var dirname = path.dirname(ifile);
 /* if input file is prefixed with directories
  * add the directory to output file too 
  */
-if (dirname != '.') {
+if (dirname !== '.') {
     outfile = dirname + outfile;
 } 
 
 /* write output file */
 fs.writeFile(outfile, markdownTxt, function (err) {
-    if (err) throw err;
+    if (err) {
+        throw err;
+    }
     console.log('converted ' + program.input + ' to ' + outfile + '!');
 });
 
