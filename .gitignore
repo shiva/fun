@@ -13,3 +13,7 @@ cmake_install.cmake
 bin/
 lib/
 build/
+Build/
+Debug/
+Release/
+debug/
