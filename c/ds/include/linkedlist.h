@@ -13,8 +13,6 @@
 extern "C" {
 #endif
 
-	typedef struct node_s node_t;
-
 	void push(node_t **head, int val);
 	int  pop(node_t **head);
 
