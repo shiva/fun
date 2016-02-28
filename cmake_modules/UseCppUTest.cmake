@@ -25,9 +25,9 @@ function(add_unit_test)
         WORKING_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
         )
 
-    if (NOT TARGET test)
-        add_custom_target(test)
+    if (NOT TARGET unit-test)
+        add_custom_target(unit-test)
     endif()
-    add_dependencies(test run-${ut_target})
+    add_dependencies(unit-test run-${ut_target})
 
 endfunction(add_unit_test)
