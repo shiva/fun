@@ -13,18 +13,22 @@
 extern "C" {
 #endif
 
-	void push(node_t **head, int val);
-	int  pop(node_t **head);
+	void ll_push(node_t *head, int val);
+	int  ll_pop(node_t *head);
 
-	bool append_last(node_t **head, int val);
-	bool remove_last(node_t *head);
+	/*!
+	 * Add a node to the tail
+	 *
+	 */
+	bool ll_append(node_t *head, int val);
+	bool ll_remove_tail(node_t head);
 
-	bool remove_by_index(node_t **head, int idx);
-	bool remove_by_value(node_t **head, int val);
+	bool ll_remove_by_index(node_t *head, int idx);
+	bool ll_remove_by_value(node_t *head, int val);
 
-	bool 	node_has_next(node_t *node);
-	node_t* node_get_next(node_t *node);
-	int 	node_get_value(node_t *node);
+	bool   ll_node_has_next(node_t node);
+	node_t ll_node_get_next(node_t node);
+	int    ll_node_get_value(node_t node);
 
 
 #ifdef __cplusplus

@@ -14,6 +14,8 @@
 extern "C" {
 #endif
 
+	typedef struct iterator_s* iterator_t;
+
 	typedef bool (*has_next_fn)(iterator_t iter);
 	typedef item_type (*get_next_fn)(iterator_t iter);
 

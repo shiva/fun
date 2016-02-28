@@ -25,6 +25,6 @@
 	#define NULL (void *)0
 #endif
 
-typedef struct node_s node_t;
+typedef struct node_s* node_t;
 
 #endif /* C_DS_INCLUDE_TYPES_H_ */

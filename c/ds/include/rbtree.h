@@ -13,11 +13,11 @@
 extern "C" {
 #endif
 
-	typedef struct rbtree_s rbtree;
+	typedef struct rbtree_s* rbtree;
 
-	void 	insert(rbtree tree, int data);
-	void 	delete(rbtree tree);
-	node_t* search(rbtree tree, int data);
+	void 	rbtree_insert(rbtree tree, int data);
+	void 	rbtree_delete(rbtree tree);
+	node_t* rbtree_search(rbtree tree, int data);
 
 #ifdef __cplusplus
 }
