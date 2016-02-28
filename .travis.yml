@@ -8,7 +8,7 @@ install:
   - pushd cpputest-3.7.1/build && autoreconf .. -i && ../configure --prefix=$HOME/cpputest && make && make install
   - export CPPUTEST_HOME=$HOME/cpputest
   - popd
-script: mkdir build && cd build && cmake ../ && make && make test
+script: mkdir build && cd build && cmake ../ && make && make unit-test
 notifications:
   webhooks:
       urls:
