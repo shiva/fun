@@ -5,13 +5,13 @@
 Summary of Contents
 ===================
 
-
  - th-stor     - Thread local storage 
  - fwc_stdlib  - A standard library (based on Linux Programming Interface stdlib) that provides basic types, error functions, etc 
+ - ds          - Reference implementation of data-structures and algorithms
  - nim         - A set of simple programs using [nim language](http://nim-lang.org/) 
  - ooc         - Basic framework and library for object-oriented programming in C
 
-Comming Soon
+Coming Soon
 ------------
  - locks       - Examples for thread locking (coming soon)
  - cplug       - A C framework for loading multiple c-libraries as plugins - using a config file (coming soon)
