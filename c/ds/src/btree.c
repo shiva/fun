@@ -1,21 +1,25 @@
 #include "mem.h"
 #include "types.h"
 #include "btree.h"
+#include <assert.h>
+
+typedef enum {
+	NODE_LEFT = 0,
+	NODE_RIGHT
+} node_orientation_t;
 
 struct btree_s {
-    node_t* root;
+    node_t root;
 };
 
 struct node_s {
-    node_t* ;
-    node_t* right;
-
-    int data;
+    node_t children[2];
+    int    data;
 };
 
-btree create_btree(void)
+btree btree_create(void)
 {
-    rbtree t = NULL;
+    btree t = NULL;
 
     t = mem_alloc(sizeof(struct btree_s));
     if (t) {
@@ -25,36 +29,71 @@ btree create_btree(void)
     return t;
 }
 
-node_t* make_node(int data)
+node_t make_node(int data)
 {
-    node_t* n = mem_alloc(sizeof(struct node_s));
+    node_t n = mem_alloc(sizeof(struct node_s));
     if (n) {
-        n->left = NULL;
-        n->right = NULL;
+        n->children[NODE_LEFT] = NULL;
+        n->children[NODE_RIGHT] = NULL;
         n->data = data;
     }
+
+    return n;
 }
 
-void insert(rbtree tree, int data)
+bool node_has_child(node_t n, node_orientation_t orientation)
 {
-    if (!tree) {
-        return;
-    }
-
-    tree->root = insert_node(tree->root, data);
-    if(tree->root == NULL) {
-        tree->root =
-    }
+	return (n->children[orientation] != NULL);
 }
 
-node_t* insert_node(node_t* root, int data)
+node_t node_get_child(node_t n, node_orientation_t orientation)
 {
-    if (root == null) {
-        root = make_node(data);
-    } else if (data < root->data) {
-        root->left = insert_node
-    }
+	return n->children[orientation];
 }
 
-void 	delete(rbtree tree);
-node_t* search(rbtree tree, int data);
+void node_add_child(node_t n, node_orientation_t o, node_t child)
+{
+	assert(n->children[o] == NULL);
+	n->children[o] = child;
+}
+
+void btree_node_insert(node_t node, node_t newnode)
+{
+	node_t child = NULL;
+	node_orientation_t orientation;
+
+	orientation = (newnode->data < node->data) ? NODE_LEFT : NODE_RIGHT;
+	child = node_get_child(node, orientation);
+	if (child) {
+		return btree_node_insert(child, newnode);
+	} else {  // reached leaf, add newnode
+		return node_add_child(node, orientation, newnode);
+	}
+}
+
+void btree_insert(btree tree, int data)
+{
+	node_t newnode = make_node(data);
+
+	if (!tree) {
+		return;
+	}
+
+	if (!tree->root) {	// no root => just use new node as root
+		tree->root = newnode;
+		return;
+	}
+
+	// root exists
+	return btree_node_insert(tree->root, newnode);
+}
+
+void btree_delete(btree tree)
+{
+	return;
+}
+
+node_t btree_search(btree tree, int data)
+{
+	return NULL;
+}

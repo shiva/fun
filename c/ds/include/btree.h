@@ -15,9 +15,10 @@ extern "C" {
 
 	typedef struct btree_s* btree;
 
+	btree 	btree_create(void);
 	void 	btree_insert(btree tree, int data);
 	void 	btree_delete(btree tree);
-	node_t* btree_search(btree tree, int data);
+	node_t  btree_search(btree tree, int data);
 
 #ifdef __cplusplus
 }

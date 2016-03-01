@@ -3,8 +3,8 @@
 #include "mem.h"
 
 struct node_s {
-	int val;
-	struct node_s* next;
+	int 			val;
+	struct node_s* 	next;
 };
 
 // push to head

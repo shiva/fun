@@ -7,7 +7,7 @@ include_directories(    # add everything to include path
 set(DS_SOURCES
 	src/mem.c
     src/linkedlist.c
-    #src/btree.c
+    src/btree.c
     
     #src/rbtree.c
     )
@@ -29,5 +29,6 @@ add_unit_test(
     	${DS_SOURCES}
     	tests/BasicTests.cpp
     	tests/LinkedListTests.cpp
+    	tests/BTreeTests.cpp
     	tests/RunAllTests.cpp
     )
