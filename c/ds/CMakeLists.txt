@@ -2,6 +2,7 @@ include(UseCppUTest)
 
 include_directories(    # add everything to include path
     include
+    src
 )
 
 set(DS_SOURCES

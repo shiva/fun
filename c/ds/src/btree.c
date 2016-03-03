@@ -1,21 +1,8 @@
+#include <assert.h>
 #include "mem.h"
 #include "types.h"
 #include "btree.h"
-#include <assert.h>
-
-typedef enum {
-	NODE_LEFT = 0,
-	NODE_RIGHT
-} node_orientation_t;
-
-struct btree_s {
-    node_t root;
-};
-
-struct node_s {
-    node_t children[2];
-    int    data;
-};
+#include "btree_private.h"
 
 btree btree_create(void)
 {
@@ -71,6 +58,16 @@ void btree_node_insert(node_t node, node_t newnode)
 	}
 }
 
+size_t btree_node_size(node_t node)
+{
+	if (!node) {
+		return 0;
+	}
+
+	return btree_node_size(node->children[NODE_LEFT]) +
+		   btree_node_size(node->children[NODE_RIGHT]) + 1;
+}
+
 void btree_insert(btree tree, int data)
 {
 	node_t newnode = make_node(data);
@@ -96,4 +93,14 @@ void btree_delete(btree tree)
 node_t btree_search(btree tree, int data)
 {
 	return NULL;
+}
+
+size_t  btree_size(btree tree)
+{
+	return btree_node_size(tree->root);
+}
+
+size_t  btree_max_depth(btree tree)
+{
+	return 0;
 }
