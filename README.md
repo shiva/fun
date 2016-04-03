@@ -79,4 +79,9 @@ You can use a [test-runner][1] to run unit-tests via eclipse.
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/shiva/fun/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+TODO
+===
+ - [ ] Remove need to source install cpputest on Travis
+ - [ ] Switch to docker-based builds
+
 [1] : https://github.com/tcmak/CppUTestEclipseJunoTestRunner
